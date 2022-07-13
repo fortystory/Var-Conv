@@ -1,8 +1,8 @@
 {
-    "pluginName": "变量命名方式兼大小写转换",
-    "description": "将任意写法变量名转换为任意写法变量名，另兼有大小写转换功能",
-    "author": "ImDong",
-    "homepage": "https://www.qs5.org/?utools-var-conv",
+    "pluginName": "变量重命名",
+    "description": "forked from https://github.com/imdong/Var-Conv",
+    "author": "forty40@live.cn",
+    "homepage": "https://github.com/fortystory/Var-Conv",
     "version": "1.0.2",
     "preload": "src/preload.js",
     "logo": "logo.png",
