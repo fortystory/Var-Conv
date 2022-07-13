@@ -67,6 +67,56 @@ window.exports = {
             placeholder: "输入变量名"
         }
     },
+    "toUpperCamelCase":{
+        mode:"none",
+        args:{
+            enter: (action) => {
+                utools.hideMainWindow();
+                let var_conv = new VarConv(action.payload);
+                pasteText(var_conv.toUpperCamelCase());
+            },
+        }
+    },
+    "toCamelCase":{
+        mode:"none",
+        args:{
+            enter: (action) => {
+                utools.hideMainWindow();
+                let var_conv = new VarConv(action.payload);
+                pasteText(var_conv.toCamelCase());
+            },
+        }
+    },
+    "toSnake":{
+        mode:"none",
+        args:{
+            enter: (action) => {
+                utools.hideMainWindow();
+                let var_conv = new VarConv(action.payload);
+                pasteText(var_conv.toSnake());
+            },
+        }
+    },
+    "toHyphen":{
+        mode:"none",
+        args:{
+            enter: (action) => {
+                utools.hideMainWindow();
+                let var_conv = new VarConv(action.payload);
+                pasteText(var_conv.toHyphen());
+            },
+        }
+    },
+    "toConstType":{
+        mode:"none",
+        args:{
+            enter: (action) => {
+                utools.hideMainWindow();
+                let var_conv = new VarConv(action.payload);
+                pasteText(var_conv.toConstType());
+            },
+        }
+    },
 }
 
 function enterText(text) {
@@ -76,11 +126,16 @@ function enterText(text) {
     utools.hideMainWindow();
     utools.setSubInputValue('');
     utools.outPlugin();
+}
 
+function pasteText(text) {
+    // 复制到剪贴板
+    utools.copyText(text)
     // 区分系统 触发粘贴键
     if (utools.isMacOs()) {
         utools.simulateKeyboardTap('v', 'command')
     } else {
         utools.simulateKeyboardTap('v', 'ctrl')
     }
+    utools.outPlugin();
 }

@@ -8,13 +8,63 @@
     "logo": "logo.png",
     "features": [
         {
-            "code": "to",
-            "explain": "变量命名方式转换",
-            "icon": "logo.png",
-            "cmds": [
+            "code":"toUpperCamelCase",
+            "explain":"大驼峰 VarName",
+            "icon":"logo.png",
+            "cmds":[
                 {
-                    "type": "over",
-                    "label": "将变量名转换为"
+                    "type":"over",
+                    "label":"大驼峰 varName",
+                    "exclude":"/^(:?[^\\$a-zA-Z_][\\w-]+)|(:?\\$[^a-zA-Z_][\\w-]+)|(?:[!@#%\\^&*\\\\(-=\\)`~\\;'\\[\\]:\"<>\\?,\\./\\|]+)|(?:[\u4E00-\u9FA5]+)|(?:[\uff01-\uff9f]+)$/"
+                }
+            ]
+        },
+        {
+            "code":"toCamelCase",
+            "explain":"驼峰法 varName",
+            "icon":"logo.png",
+            "cmds":[
+                {
+                    "type":"over",
+                    "label":"驼峰法 varName",
+                    "exclude":"/^(:?[^\\$a-zA-Z_][\\w-]+)|(:?\\$[^a-zA-Z_][\\w-]+)|(?:[!@#%\\^&*\\\\(-=\\)`~\\;'\\[\\]:\"<>\\?,\\./\\|]+)|(?:[\u4E00-\u9FA5]+)|(?:[\uff01-\uff9f]+)$/"
+                }
+            ]
+        },
+        {
+            "code":"toSnake",
+            "explain":"蛇形法 var_name",
+            "icon":"logo.png",
+            "cmds":[
+                {
+                    "type":"over",
+                    "label":"蛇形法 var_name",
+                    "exclude":"/^(:?[^\\$a-zA-Z_][\\w-]+)|(:?\\$[^a-zA-Z_][\\w-]+)|(?:[!@#%\\^&*\\\\(-=\\)`~\\;'\\[\\]:\"<>\\?,\\./\\|]+)|(?:[\u4E00-\u9FA5]+)|(?:[\uff01-\uff9f]+)$/"
+                }
+            ]
+        },
+        {
+            "code":"toHyphen",
+            "explain":"连字符 var-name",
+            "icon":"logo.png",
+            "cmds":[
+                {
+                    "type":"over",
+                    "label":"连字符 var-name",
+                    "exclude":"/^(:?[^\\$a-zA-Z_][\\w-]+)|(:?\\$[^a-zA-Z_][\\w-]+)|(?:[!@#%\\^&*\\\\(-=\\)`~\\;'\\[\\]:\"<>\\?,\\./\\|]+)|(?:[\u4E00-\u9FA5]+)|(?:[\uff01-\uff9f]+)$/",
+                    "minLength": 1
+                }
+            ]
+        },
+        {
+            "code":"toConstType",
+            "explain":"常量式 VAR_NAME",
+            "icon":"logo.png",
+            "cmds":[
+                {
+                    "type":"over",
+                    "label":"常量式 VAR_NAME",
+                    "exclude":"/^(:?[^\\$a-zA-Z_][\\w-]+)|(:?\\$[^a-zA-Z_][\\w-]+)|(?:[!@#%\\^&*\\\\(-=\\)`~\\;'\\[\\]:\"<>\\?,\\./\\|]+)|(?:[\u4E00-\u9FA5]+)|(?:[\uff01-\uff9f]+)$/"
                 }
             ]
         },
@@ -23,7 +73,8 @@
             "explain": "变量命名方式转换",
             "icon": "logo.png",
             "cmds": [
-                "变量"
+                "变量",
+                "重命名"
             ]
         }
     ]
